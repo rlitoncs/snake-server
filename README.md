@@ -6,8 +6,11 @@ A terminal-based Snake implementation written in JavaScript (Node.js).
 
 ## Instructions
 
-To play the game, one needs to implement a game client. Here is the example solution code for the client I have implemented which can be [found here](https://github.com/rlitoncs/snake-client)
-## Installation
+In order to play the game, both server side and client side need to be installed.
+
+The link to installing the client side for Snake can be [found here](https://github.com/rlitoncs/snake-client)
+
+You are now ready to install the server side!
 
 ### Clone from repository
 
