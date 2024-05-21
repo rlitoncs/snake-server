@@ -35,7 +35,8 @@ Added the feature of broadcasting message to all clients when new player joins, 
 
 ```javascript
 handleNewClient(client) {
-...
+// ...
+   ...
     client.on('data', (data) => {
       if (data.includes('Name')){
         this.clients.forEach(user => { user.write(`New Player '${data.split(' ').slice(1)}' Has Joined`)})
