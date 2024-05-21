@@ -13,8 +13,8 @@ To play the game, one needs to implement a game client. An example solution code
 ### Clone from repository
 
 ```bash
-git clone https://github.com/lighthouse-labs/snek-multiplayer.git
-cd snek-multiplayer
+git clone git@github.com:rlitoncs/snake-server.git
+cd snake-server
 
 # install and run via npm
 npm install
@@ -28,3 +28,20 @@ This project was not built from scratch. It was inspired and started from [snek]
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+
+## Stretch
+Added the feature of broadcasting message to all clients when new player joins, and number of connected players!
+
+```javascript
+handleNewClient(client) {
+...
+    client.on('data', (data) => {
+      if (data.includes('Name')){
+        this.clients.forEach(user => { user.write(`New Player '${data.split(' ').slice(1)}' Has Joined`)})
+      }
+    })
+
+    this.clients.forEach(user => user.write(`Number of Players Connected: ${this.clients.length}`))
+}
+```
