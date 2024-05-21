@@ -63,6 +63,16 @@ class RemoteInterface {
 
     client.on('data', this.handleClientData.bind(this, client))
     client.on('end', this.handleClientEnded.bind(this, client))
+
+    //Sends Message to all clients when New Player has Joined 
+    client.on('data', (data) => {
+      if (data.includes('Name')){
+        this.clients.forEach(user => { user.write(`New Player '${data.split(' ').slice(1)}' Has Joined`)})
+      }
+    })
+    
+    //Sends Message to all clients with the Number of Players Connected In the Server
+    this.clients.forEach(user => user.write(`Number of Players Connected: ${this.clients.length}`)) 
   }
 
   handleClientData(client, data) {
