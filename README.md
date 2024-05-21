@@ -24,6 +24,7 @@ npm run play
 ## Acknowledgements
 
 This project was not built from scratch. It was inspired and started from [snek](https://github.com/taniarascia/snek) ([blog post](https://www.taniarascia.com/snake-game-in-javascript/)). [Tania Rascia](https://www.taniarascia.com) is the original author.
+This project was also cloned from [lighthouse-labs](https://github.com/lighthouse-labs/snek-multiplayer).
 
 ## License
 
